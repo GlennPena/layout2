@@ -1,16 +1,49 @@
 import "./App.css";
 
+function TopLeftRight() {
+  return <div className="top-left-right"></div>;
+}
+
+function TopCenter() {
+  return <div className="top-center">
+    <TopCenterContents name="Glenn"/>
+    <TopCenterContents name="Peña"/>
+  </div>;
+}
+
+function TopCenterContents(props) {
+  return <div className="top-center-contents">{props.name}</div>;
+}
+
+function TopRow() {
+  return <div className="top-row">
+    <TopLeftRight />
+    <TopCenter />
+    <TopLeftRight />
+  </div>;
+}
+
+function BottomRow() {
+  return <div className="bottom-row">
+    <BottomLeftRight />
+    <BottomCenter text="C-PCIT9"/>
+    <BottomCenter text="IT3A"/>
+    <BottomLeftRight />
+  </div>;
+}
+
+function BottomLeftRight() {
+  return <div className="bottom-left-right"></div>;
+}
+
+function BottomCenter(props) {
+  return <div className="bottom-center">{props.text}</div>;
+}
+
 function App() {
   return (
     <div className="main-container">
-      <div className="top-row">
-        <div className="top-left"></div>
-        <div className="top-center">
-          <div className="top-center-box"></div>
-          <div className="top-center-box"></div>
-        </div>
-        <div className="top-right"></div>
-      </div>
+      <TopRow />
       <div className="middle-row">
         <div className="middle-left"></div>
         <div className="middle-right">
@@ -18,15 +51,8 @@ function App() {
           <div className="middle-right-box-down"></div>
         </div>
       </div>
-      <div className="bottom-row">
-        <div className="bottom-left"></div>
-        <div className="bottom-center">
-          <div className="bottom-center-box"></div>
-          <div className="bottom-center-box"></div>
-        </div>
-        <div className="bottom-right"></div>
+      <BottomRow />
       </div>
-    </div>
   );
 }
 
